@@ -1,4 +1,4 @@
-# clean_arch_bookly
+# bookly_app
 
 A new Flutter project.
 
