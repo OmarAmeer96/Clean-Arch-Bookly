@@ -4,12 +4,13 @@ import 'package:bookly_app/Features/home/domain/entities/book_entity.dart';
 import 'package:bookly_app/Features/home/domain/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
 
-class FetchFeaturedBooksUseCase {
+class FetchFeaturedBooksUseCase extends UseCase<List<BookEntity>> {
   final HomeRepo homeRepo;
 
   FetchFeaturedBooksUseCase({required this.homeRepo});
 
-  Future<Either<Failure, List<BookEntity>>> fetchFeauredBooks() {
+  @override
+  Future<Either<Failure, List<BookEntity>>> call() {
     /* 
     Here, for example if i will check the permissions, so the code will be written here, 
     and the functionality of fetching the featured books itself 
@@ -17,4 +18,8 @@ class FetchFeaturedBooksUseCase {
     */
     return homeRepo.fetchFeauredBooks();
   }
+}
+
+abstract class UseCase<Type> {
+  Future<Either<Failure, Type>> call();
 }
