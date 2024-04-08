@@ -10,6 +10,7 @@ class Responsive {
   }
 
   static double textScaleFactor(BuildContext context) {
+    // ignore: deprecated_member_use
     return MediaQuery.of(context).textScaleFactor;
   }
 
