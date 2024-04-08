@@ -8,3 +8,4 @@ const kMontserratMedium = 'Montserrat-Medium';
 const kMontserratSemiBold = 'Montserrat-SemiBold';
 const kMontserratBold = 'Montserrat-Bold';
 const kGtSectraFineRegular = 'GT-Sectra-Fine-Regular';
+const kFeaturedBox = 'featured_box';
