@@ -11,7 +11,7 @@ abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchNewewstBooks();
 }
 
-class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
+class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   final ApiService apiService;
 
   HomeRemoteDataSourceImpl(this.apiService);
