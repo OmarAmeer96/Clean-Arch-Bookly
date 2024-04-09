@@ -4,6 +4,7 @@ import 'package:bookly_app/Features/home/data/data_sources/home_remote_data_sour
 import 'package:bookly_app/Features/home/domain/entities/book_entity.dart';
 import 'package:bookly_app/Features/home/domain/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 // This class is the implementation of the home repo, so it implements the unimplemented methods of the home repo.
 class HomeRepoImpl extends HomeRepo {
@@ -27,7 +28,10 @@ class HomeRepoImpl extends HomeRepo {
       books = await homeRemoteDataSource.fetchFeauredBooks();
       return right(books);
     } catch (e) {
-      return left(Failure());
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(message: e.toString()));
     }
   }
 
@@ -43,7 +47,10 @@ class HomeRepoImpl extends HomeRepo {
       books = await homeRemoteDataSource.fetchNewewstBooks();
       return right(books);
     } catch (e) {
-      return left(Failure());
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(message: e.toString()));
     }
   }
 }
