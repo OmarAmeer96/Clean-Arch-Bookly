@@ -17,11 +17,12 @@ class FeaturedBooksListView extends StatefulWidget {
 }
 
 class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
-  final ScrollController _scrollController = ScrollController();
+  late final ScrollController _scrollController;
 
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     _scrollController.addListener(_scrollListener);
   }
 
