@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:bookly_app/Core/utils/assets.dart';
 import 'package:bookly_app/Core/utils/responsive.dart';
 import 'package:bookly_app/Features/home/domain/entities/book_entity.dart';
@@ -18,6 +19,7 @@ class FeaturedBooksListView extends StatelessWidget {
         itemCount: books.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
+          log('${books.length}');
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 7),
             child: CustomBookImage(
