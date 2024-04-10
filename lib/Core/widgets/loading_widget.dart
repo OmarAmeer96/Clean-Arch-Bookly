@@ -20,19 +20,19 @@ class LoadingWidget extends StatelessWidget {
               height: 50.0,
               color: Colors.white,
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             Container(
               width: double.infinity,
               height: 10.0,
               color: Colors.white,
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             Container(
               width: 150.0,
               height: 10.0,
               color: Colors.white,
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             Container(
               width: 100.0,
               height: 10.0,
