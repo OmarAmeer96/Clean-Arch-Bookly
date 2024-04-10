@@ -11,15 +11,14 @@ class FetchFeaturedBooksUseCase extends UseCase<List<BookEntity>, int> {
   FetchFeaturedBooksUseCase({required this.homeRepo});
 
   @override
-  // ignore: avoid_renaming_method_parameters
-  Future<Either<Failure, List<BookEntity>>> call([int pageNumber = 0]) async {
+  Future<Either<Failure, List<BookEntity>>> call([int param = 0]) async {
     /* 
     Here, for example if i will check the permissions, so the code will be written here, 
     and the functionality of fetching the featured books itself 
     is at the fetchFeauredBooks (so that i just called it in the next line). 
     */
     return await homeRepo.fetchFeauredBooks(
-      pageNumber: pageNumber,
+      pageNumber: param,
     );
   }
 }
